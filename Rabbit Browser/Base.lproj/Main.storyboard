@@ -34,7 +34,7 @@
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="ncM-Ae-imu"/>
+                                        <exclude reference="ncM-Ae-imu"/>
                                     </mask>
                                 </variation>
                             </button>
@@ -48,6 +48,9 @@
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="zY9-CO-1Hs"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KX6-sm-AoV">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -69,9 +72,12 @@
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="KEE-29-1ZZ"/>
+                                        <exclude reference="KEE-29-1ZZ"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="r6w-XB-6FP"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja7-NN-Qp7">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -88,7 +94,7 @@
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="JwI-cd-9jO"/>
+                                        <exclude reference="JwI-cd-9jO"/>
                                     </mask>
                                 </variation>
                             </label>

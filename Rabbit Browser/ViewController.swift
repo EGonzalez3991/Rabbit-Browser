@@ -10,7 +10,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     var RBRabbitLogin: UIImageView = UIImageView()
     var RBRabbitLogin1: UIImageView = UIImageView()
@@ -22,6 +22,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: Selector("watchShowKeyboard:"),
+            name: UIKeyboardWillShowNotification,
+            object: nil)
         
         RBRabbitLogin.frame = CGRectMake(0, 0, 200, 200)
         RBRabbitLogin.layer.cornerRadius = 100
@@ -94,7 +100,7 @@ class ViewController: UIViewController {
         self.view.addSubview(RBRabbitLogin)
         
     }
-    
+
     override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
         
         
@@ -103,13 +109,39 @@ class ViewController: UIViewController {
         //RBRabbitLogin3.center = CGPointMake(self.view.center.x + 200, self.view.center.y - 100)
         //RBRabbitLogin4.center = CGPointMake(self.view.center.x - 150, self.view.center.y + 150)
         //RBRabbitLogin5.center = CGPointMake(self.view.center.x + 150, self.view.center.y + 150)
+        
         RBRabbitLogin.center = self.view.center
+        
         RBRabbitLogin1.center = self.view.center
         RBRabbitLogin2.center = self.view.center
         RBRabbitLogin3.center = self.view.center
         RBRabbitLogin4.center = self.view.center
         RBRabbitLogin5.center = self.view.center
         
+    }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
+    
+    func watchShowKeyboard( notification: NSNotification ) {
+        
+        let NInfo: NSDictionary = notification.userInfo!
+        var animationDuration: NSTimeInterval = NSTimeInterval()
+        var animationCurve: UIViewAnimationCurve!
+        var keyboardFrame: CGRect!
+        
+        NInfo.objectForKey(UIKeyboardAnimationDurationUserInfoKey)!.getValue(&animationDuration)
+        NInfo.objectForKey(UIKeyboardAnimationCurveUserInfoKey)!.getValue(&animationCurve)
+        NInfo.objectForKey(UIKeyboardFrameBeginUserInfoKey)!.getValue(&keyboardFrame)
+        
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(animationDuration)
+        UIView.setAnimationCurve(animationCurve)
+        
+        self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - keyboardFrame.size.height, self.view.frame.size.width, self.view.frame.size.height)
+        
+        UIView.commitAnimations()
     }
 
     override func didReceiveMemoryWarning() {
