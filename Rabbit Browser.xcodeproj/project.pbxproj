@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D960D7D219BA95BF0061ACD9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D960D7D119BA95BF0061ACD9 /* QuartzCore.framework */; };
+		D9788FD319BAA6EE00336D67 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9788FD219BAA6EE00336D67 /* Images.xcassets */; };
 		D9FCFE5219BA72D700E98C5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FCFE5119BA72D700E98C5D /* AppDelegate.swift */; };
 		D9FCFE5419BA72D700E98C5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FCFE5319BA72D700E98C5D /* ViewController.swift */; };
 		D9FCFE5719BA72D700E98C5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9FCFE5519BA72D700E98C5D /* Main.storyboard */; };
-		D9FCFE5919BA72D700E98C5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9FCFE5819BA72D700E98C5D /* Images.xcassets */; };
 		D9FCFE6519BA72D700E98C5D /* Rabbit_BrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FCFE6419BA72D700E98C5D /* Rabbit_BrowserTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,12 +26,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D960D7D119BA95BF0061ACD9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D9788FD219BAA6EE00336D67 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D9FCFE4C19BA72D700E98C5D /* Rabbit Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rabbit Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9FCFE5019BA72D700E98C5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9FCFE5119BA72D700E98C5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9FCFE5319BA72D700E98C5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D9FCFE5619BA72D700E98C5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D9FCFE5819BA72D700E98C5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D9FCFE5E19BA72D700E98C5D /* Rabbit BrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rabbit BrowserTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9FCFE6319BA72D700E98C5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9FCFE6419BA72D700E98C5D /* Rabbit_BrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rabbit_BrowserTests.swift; sourceTree = "<group>"; };
@@ -41,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D960D7D219BA95BF0061ACD9 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +60,7 @@
 		D9FCFE4319BA72D700E98C5D = {
 			isa = PBXGroup;
 			children = (
+				D960D7D119BA95BF0061ACD9 /* QuartzCore.framework */,
 				D9FCFE4E19BA72D700E98C5D /* Rabbit Browser */,
 				D9FCFE6119BA72D700E98C5D /* Rabbit BrowserTests */,
 				D9FCFE4D19BA72D700E98C5D /* Products */,
@@ -78,7 +82,7 @@
 				D9FCFE5119BA72D700E98C5D /* AppDelegate.swift */,
 				D9FCFE5319BA72D700E98C5D /* ViewController.swift */,
 				D9FCFE5519BA72D700E98C5D /* Main.storyboard */,
-				D9FCFE5819BA72D700E98C5D /* Images.xcassets */,
+				D9788FD219BAA6EE00336D67 /* Images.xcassets */,
 				D9FCFE4F19BA72D700E98C5D /* Supporting Files */,
 			);
 			path = "Rabbit Browser";
@@ -190,7 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9FCFE5719BA72D700E98C5D /* Main.storyboard in Resources */,
-				D9FCFE5919BA72D700E98C5D /* Images.xcassets in Resources */,
+				D9788FD319BAA6EE00336D67 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +401,7 @@
 				D9FCFE6A19BA72D700E98C5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9FCFE6B19BA72D700E98C5D /* Build configuration list for PBXNativeTarget "Rabbit BrowserTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +410,7 @@
 				D9FCFE6D19BA72D700E98C5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
