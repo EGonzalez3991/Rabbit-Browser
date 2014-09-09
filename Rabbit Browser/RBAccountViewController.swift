@@ -23,6 +23,13 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    class testObject: NSObject {
+        
+        var hw = "hello world"
+        
+    }
+    
+    
     
     
      // Interface Builder Outlets Area
@@ -30,15 +37,22 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var RBCreateAccountButton: UIButton!
     @IBOutlet var bottomTest: NSLayoutConstraint!
     
+    // Test outlets
     
+    @IBOutlet var testLabel0: UILabel!
+    @IBOutlet var testLabel1: UILabel!
+    @IBOutlet var testLabel2: UILabel!
+    @IBOutlet var testLabel3: UILabel!
+    @IBOutlet var testLabel4: UILabel!
+    @IBOutlet var testLabel5: UILabel!
+
     
      // RBAccount View Controller Native Methods Area
     // All Native Methods must be implemented here....
     override func viewDidLoad() {
-        
+    
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+         // Do any additional setup after loading the view, typically from a nib.
         /*
         
             DEFAULT NOTIFICATION CENTER OBSERVER OBJECT REGISTRATION
@@ -65,7 +79,7 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
             name: UIKeyboardWillHideNotification,
             object: nil)
         
-        // @ned ------------------------------------------------------------------------------------------^
+        // @end ------------------------------------------------------------------------------------------^
         
         var RBLoginImageViewsColors = [UIColor.orangeColor(), UIColor.yellowColor(), UIColor.redColor(), UIColor.purpleColor(), UIColor.blueColor(), UIColor.greenColor() ]
         
@@ -107,7 +121,8 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
 
     }// @end of ViewDidLoad
     
-
+    
+    
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
     
@@ -117,10 +132,11 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
             
         }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
             
-        
+            
         })
         
     }
+    
     
     
     
@@ -129,7 +145,6 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         
     }
-    
     
     
     
@@ -162,9 +177,9 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
                         
                         
                         
-                })
+                    })
                 
-        })
+            })
         
     }
     
@@ -261,6 +276,26 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    func makeHTTPCallToServer (path: String) -> (Void) {
+        
+        NSURLConnection.sendAsynchronousRequest(
+            NSURLRequest(
+                URL: NSURL(
+                    string: "\(path)") ),
+                queue: NSOperationQueue.mainQueue(),
+                completionHandler: {
+                    response,
+                    data,
+                    error in
+                
+                    println( "Server Response: \n \( NSString(data: data, encoding: NSUTF8StringEncoding) )" )
+                
+                })
+        
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -271,6 +306,9 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
     // All actions must be implemented here....
     
     @IBAction func loginButtonAction(sender: AnyObject) {
+        
+        makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/accountlogin/?pemail=qwesa&ppasswd=1029384756")
+        
         
         self.view.endEditing(true)
         
@@ -287,7 +325,9 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
                 
             }, completion: { (Bool) -> Void in
                 
+                
                 self.loginAnimation()
+                
                 
             })
         
