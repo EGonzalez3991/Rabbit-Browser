@@ -22,16 +22,6 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
     
     
     
-    
-    class testObject: NSObject {
-        
-        var hw = "hello world"
-        
-    }
-    
-    
-    
-    
      // Interface Builder Outlets Area
     // All Outlets must be implemented here....
     @IBOutlet var RBCreateAccountButton: UIButton!
@@ -288,8 +278,17 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
                     data,
                     error in
                 
-                    println( "Server Response: \n \( NSString(data: data, encoding: NSUTF8StringEncoding) )" )
-                
+                    let jsonDict: NSArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil ) as NSArray
+                   
+                    self.testLabel0.text = jsonDict[0].objectForKey("pfname") as? String
+                    self.testLabel1.text = jsonDict[0].objectForKey("plname") as? String
+                    self.testLabel2.text = jsonDict[0].objectForKey("pemail") as? String
+                    self.testLabel3.text = jsonDict[0].objectForKey("ppasswd") as? String
+                    self.testLabel4.text = jsonDict[0].objectForKey("cgender") as? String
+                    
+                    self.testLabel5.text = jsonDict[0].objectForKey("cage" )!.description as String
+                    //println()
+                    
                 })
         
     }
@@ -307,7 +306,7 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginButtonAction(sender: AnyObject) {
         
-        makeHTTPCallToServer("http://gchriswill.me")
+        makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/accountlogin/?pemail=qwerty&ppasswd=test")
         
         
         self.view.endEditing(true)
