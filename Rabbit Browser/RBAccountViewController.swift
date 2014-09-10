@@ -306,7 +306,7 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginButtonAction(sender: AnyObject) {
         
-        makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/accountlogin/?pemail=qwerty&ppasswd=test")
+        makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/accountlogin/?pemail=qwerty&ppasswd=1029384756")
         
         
         self.view.endEditing(true)
