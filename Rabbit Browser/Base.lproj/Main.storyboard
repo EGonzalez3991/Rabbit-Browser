@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -352,6 +353,8 @@
                     <connections>
                         <outlet property="RBCreateAccountButton" destination="Pxe-UJ-nOC" id="o0D-Js-m4h"/>
                         <outlet property="bottomTest" destination="kzI-MZ-bq7" id="5Ep-V8-Ujg"/>
+                        <outlet property="emailTextField" destination="bLC-9w-Xf1" id="sKJ-oC-wiL"/>
+                        <outlet property="passwordTextField" destination="8Xn-Ui-QQm" id="S8u-eq-v3K"/>
                         <outlet property="testLabel0" destination="bAN-DJ-Bfj" id="vlI-OU-HYo"/>
                         <outlet property="testLabel1" destination="uCW-ng-HVY" id="lnd-4h-owO"/>
                         <outlet property="testLabel2" destination="w7t-kU-P2q" id="VAz-ok-wWx"/>
