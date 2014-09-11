@@ -37,6 +37,9 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var testLabel5: UILabel!
 
     
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
      // RBAccount View Controller Native Methods Area
     // All Native Methods must be implemented here....
     override func viewDidLoad() {
@@ -268,29 +271,41 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
     
     func makeHTTPCallToServer (path: String) -> (Void) {
         
-        NSURLConnection.sendAsynchronousRequest(
-            NSURLRequest(
-                URL: NSURL(
-                    string: "\(path)") ),
+            NSURLConnection.sendAsynchronousRequest(
+                NSURLRequest(
+                    URL: NSURL(
+                        string: "\(path)") ),
                 queue: NSOperationQueue.mainQueue(),
                 completionHandler: {
                     response,
                     data,
                     error in
-                
-                    let jsonDict: NSArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil ) as NSArray
-                   
-                    self.testLabel0.text = jsonDict[0].objectForKey("pfname") as? String
-                    self.testLabel1.text = jsonDict[0].objectForKey("plname") as? String
-                    self.testLabel2.text = jsonDict[0].objectForKey("pemail") as? String
-                    self.testLabel3.text = jsonDict[0].objectForKey("ppasswd") as? String
-                    self.testLabel4.text = jsonDict[0].objectForKey("cgender") as? String
                     
-                    self.testLabel5.text = jsonDict[0].objectForKey("cage" )!.description as String
+                    if let jsonDict: NSArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil ) as? NSArray{
+                        
+                        self.testLabel0.text = jsonDict[0].objectForKey("pfname") as? String
+                        self.testLabel1.text = jsonDict[0].objectForKey("plname") as? String
+                        self.testLabel2.text = jsonDict[0].objectForKey("pemail") as? String
+                        self.testLabel3.text = jsonDict[0].objectForKey("ppasswd") as? String
+                        self.testLabel4.text = jsonDict[0].objectForKey("cgender") as? String
+                        
+                        self.testLabel5.text = jsonDict[0].objectForKey("cage" )!.description as String
+                        
+                    }else{
+                        
+                        var datastring: String = NSString(data:data, encoding:NSUTF8StringEncoding)
+                        
+                        self.testLabel0.text = datastring
+                        
+                        println(datastring)
+                        
+                    }
+                    
+                    
                     //println()
                     
-                })
-        
+            })
+            
     }
     
     
@@ -306,7 +321,12 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginButtonAction(sender: AnyObject) {
         
-        makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/accountlogin/?pemail=qwerty&ppasswd=1029384756")
+        var pemail : String = emailTextField.text
+        var ppasswd : String = passwordTextField.text
+        
+        makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/accountlogin/?pemail=\(pemail)&ppasswd=\(ppasswd)")
+        //makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/createaccount/?pfname=Wilma2&plname=Melendez2&pemail=wilmita2@me.com&ppasswd=000002&cgender=Woman2&cage=56")
+        
         
         
         self.view.endEditing(true)
