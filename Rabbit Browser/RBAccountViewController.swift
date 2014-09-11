@@ -2,7 +2,7 @@
        //  ViewController.swift                                           \\
       //  Rabbit Browser                                                   \\
      //                                                                     \\
-    //  Created by Christopher Gonzalez on 9/5/14.                           \\
+    //  Created by Christopher and Ernesto, both Gonzalez, on 9/5/14.        \\
    //  Copyright (c) 2014 gchriswill. All rights reserved.                    \\
   //                                                                           \\
  // IMPORTANT NOTE! You are working in the gchriswill-workspace branch!         \\
@@ -281,7 +281,7 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
                     data,
                     error in
                     
-                    if let jsonDict: NSArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil ) as? NSArray{
+                    if let jsonDict: NSArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil ) as? NSArray {
                         
                         self.testLabel0.text = jsonDict[0].objectForKey("pfname") as? String
                         self.testLabel1.text = jsonDict[0].objectForKey("plname") as? String
@@ -325,7 +325,8 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
         var ppasswd : String = passwordTextField.text
         
         makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/accountlogin/?pemail=\(pemail)&ppasswd=\(ppasswd)")
-        //makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/createaccount/?pfname=Wilma2&plname=Melendez2&pemail=wilmita2@me.com&ppasswd=000002&cgender=Woman2&cage=56")
+        
+        //makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/createaccount/?pfname=Wilma23&plname=Melendez23&pemail=wilmita23@me.com&ppasswd=0000023&cgender=Woman23&cage=56")
         
         
         
