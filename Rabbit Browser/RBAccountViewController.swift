@@ -29,16 +29,19 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
      // All Outlets must be implemented here....
     // UI Outlets
     @IBOutlet var SegmentedAccountOptionsControl: UISegmentedControl!
+    @IBOutlet var RBEmailLabel: UILabel!
     @IBOutlet var RBEmailTextField: UITextField!
+    @IBOutlet var RBFirstNameLabel: UILabel!
     @IBOutlet var RBFirstNameTextField: UITextField!
+    @IBOutlet var RBPasswordLabel: UILabel!
     @IBOutlet var RBPasswordTextField: UITextField!
     @IBOutlet var RBLoginButton: UIButton!
-    @IBOutlet var RBFirstNameLabel: UILabel!
     @IBOutlet var RBLastNameLabel: UILabel!
     @IBOutlet var RBLastNameTextField: UITextField!
     @IBOutlet var RBConfirmPasswordLabel: UILabel!
     @IBOutlet var RBConfirmPasswordTextField: UITextField!
     @IBOutlet var RBCreateAccountButton: UIButton!
+    
     // Test outlets
     @IBOutlet var FirstNameResponseLabel: UILabel!
     @IBOutlet var LastNameResponseLabel: UILabel!
@@ -131,7 +134,7 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
         
         self.view.bringSubviewToFront(RBLoginImageViews[0])
         
-        centerist()
+        centerist(25)
 
     }// @end of ViewDidLoad
     
@@ -139,7 +142,7 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
     
         coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
             
-            self.centerist()
+            self.centerist(25)
             self.view.updateConstraints()
             self.view.layoutIfNeeded()
             
@@ -286,7 +289,6 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
                     self.view.updateConstraints()
                     self.view.layoutIfNeeded()
                     
-                    
                 }, completion: { (Bool) -> Void in
             
                     self.SegmentedAccountOptionsControl.setEnabled(true, forSegmentAtIndex: 1)
@@ -300,7 +302,13 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
     // Needs Comment Description
     @IBAction func loginButtonAction(sender: AnyObject) {
         
-        makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/accountlogin/?pemail=\(RBEmailTextField.text as String!)&ppasswd=\(RBPasswordTextField.text as String!)")
+        self.view.endEditing(true)
+        
+        dispatch_async(dispatch_get_global_queue(0, 0), { () -> Void in
+            
+            self.makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/accountlogin/?pemail=\(self.RBEmailTextField.text as String!)&ppasswd=\(self.RBPasswordTextField.text as String!)")
+            
+        })
         
         UIView.animateWithDuration(
             0.25,
@@ -310,7 +318,9 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
             options: UIViewAnimationOptions.BeginFromCurrentState,
             animations: { () -> Void in
                 
-                self.LoginButtonConstrainBottomSpacing.constant = -300
+                self.SegmentedAccountOptionsControl.hidden = true
+                
+                self.LoginButtonConstrainBottomSpacing.constant = -400
                 self.SegmentedControlConstrainTopSpacing.constant = -55
                 self.CreateAccountButtonConstrainBottomSpacing.constant = -125
                 self.view.updateConstraints()
@@ -318,9 +328,7 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
                 
             }, completion: { (Bool) -> Void in
                 
-                
                 self.loginAnimation()
-                
                 
             })
         
@@ -329,9 +337,13 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
     // Needs Comment Description
     @IBAction func createAccountButtonAction(sender: AnyObject) {
         
-        makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/createaccount/?pfname=\(RBFirstNameTextField.text as String!)&plname=\(RBLastNameTextField.text as String!)&pemail=\(RBEmailTextField.text as String!)&ppasswd=\(RBPasswordTextField.text as String!)")
-        
         self.view.endEditing(true)
+        
+        dispatch_async(dispatch_get_global_queue(0, 0), { () -> Void in
+            
+            self.makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/createaccount/?pfname=\(self.RBFirstNameTextField.text as String!)&plname=\(self.RBLastNameTextField.text as String!)&pemail=\(self.RBEmailTextField.text as String!)&ppasswd=\(self.RBPasswordTextField.text as String!)")
+        
+        })
         
         UIView.animateWithDuration(
             0.25,
@@ -341,16 +353,16 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
             options: UIViewAnimationOptions.BeginFromCurrentState,
             animations: { () -> Void in
                 
-               
+                self.SegmentedAccountOptionsControl.hidden = true
+                
                 self.SegmentedControlConstrainTopSpacing.constant = -55
-                self.LoginButtonConstrainBottomSpacing.constant = -300
+                self.LoginButtonConstrainBottomSpacing.constant = -400
                 self.CreateAccountButtonConstrainBottomSpacing.constant = -125
                 
                 self.view.updateConstraints()
                 self.view.layoutIfNeeded()
                 
             }, completion: { (Bool) -> Void in
-                
                 
                 self.loginAnimation()
                 

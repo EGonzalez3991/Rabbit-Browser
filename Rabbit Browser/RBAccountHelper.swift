@@ -74,11 +74,11 @@ extension RBAccountViewController {
     }// @end of valuesForLoginAnimation2 Function
     
     // Needs Comment Description
-    func centerist () -> (Void) {
+    func centerist (toSubstract: CGFloat) -> (Void) {
         
         for (var i = 0; i < 6; i++){
             
-            RBLoginImageViews[i].center = self.view.center
+            RBLoginImageViews[i].center = CGPointMake(self.view.center.x, self.view.center.y - toSubstract)
             
         }
         
@@ -122,6 +122,8 @@ extension RBAccountViewController {
     // Needs Comment Description
     func watchHideKeyboard( notification: NSNotification ) {
         
+        self.view.endEditing(true)
+        
         if KBCheck {
             
             let NInfo: NSDictionary = notification.userInfo!
@@ -135,7 +137,7 @@ extension RBAccountViewController {
             
             self.view.updateConstraints()
             self.view.layoutIfNeeded()
-            self.view.endEditing(true)
+            
             self.KBCheck = false
             
         }

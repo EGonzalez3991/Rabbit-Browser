@@ -20,7 +20,7 @@
                             <userLayoutGuide location="683" affinity="minY"/>
                         </userGuides>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email..." textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bLC-9w-Xf1">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email..." textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bLC-9w-Xf1">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
@@ -82,7 +82,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rwq-8s-wVx">
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rwq-8s-wVx">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="360" id="i7L-Go-PWO"/>
@@ -100,7 +100,7 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your last name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ngo-Em-2fv">
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your last name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ngo-Em-2fv">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="360" id="kqS-3F-yKW"/>
@@ -118,7 +118,7 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your first name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z23-5A-H5g">
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your first name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z23-5A-H5g">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -129,7 +129,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password..." textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8Xn-Ui-QQm">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password..." textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8Xn-Ui-QQm">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="360" id="8ex-bC-pil"/>
@@ -443,12 +443,14 @@
                         <outlet property="RBConfirmPasswordLabel" destination="0g9-Rx-Kt4" id="mh5-ya-uzI"/>
                         <outlet property="RBConfirmPasswordTextField" destination="Rwq-8s-wVx" id="DER-XH-dcT"/>
                         <outlet property="RBCreateAccountButton" destination="zBm-gU-OUg" id="ccs-pI-UfA"/>
+                        <outlet property="RBEmailLabel" destination="KX6-sm-AoV" id="7o8-pe-dGc"/>
                         <outlet property="RBEmailTextField" destination="bLC-9w-Xf1" id="GBF-rI-wYG"/>
                         <outlet property="RBFirstNameLabel" destination="K3H-4n-6gY" id="ftT-4a-x73"/>
                         <outlet property="RBFirstNameTextField" destination="Z23-5A-H5g" id="ooC-OT-bzF"/>
                         <outlet property="RBLastNameLabel" destination="1na-Wm-DRZ" id="bQ2-cb-9XH"/>
                         <outlet property="RBLastNameTextField" destination="Ngo-Em-2fv" id="Vd9-NB-Max"/>
                         <outlet property="RBLoginButton" destination="uEI-W3-8EW" id="N7v-2O-Kbv"/>
+                        <outlet property="RBPasswordLabel" destination="Ja7-NN-Qp7" id="3VI-iN-a7i"/>
                         <outlet property="RBPasswordTextField" destination="8Xn-Ui-QQm" id="rkI-Zg-Dam"/>
                         <outlet property="SegmentedAccountOptionsControl" destination="LTt-8M-iZF" id="x7j-S6-97Y"/>
                         <outlet property="SegmentedControlConstrainTopSpacing" destination="77i-fQ-5ER" id="sNQ-KZ-mED"/>
