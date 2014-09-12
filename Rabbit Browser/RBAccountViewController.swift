@@ -13,6 +13,8 @@ import UIKit
 class RBAccountViewController: UIViewController, UITextFieldDelegate {
     
     
+    
+    
      // Custom Variable Area
     // All custom variable must be implemented here....
     var RBLoginImageViews: [UIImageView] = Array()
@@ -22,26 +24,45 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
     
     
     
-     // Interface Builder Outlets Area
-    // All Outlets must be implemented here....
+    
+      // Interface Builder Outlets Main Area
+     // All Outlets must be implemented here....
+    // UI Outlets
+    @IBOutlet var SegmentedAccountOptionsControl: UISegmentedControl!
+    @IBOutlet var RBEmailTextField: UITextField!
+    @IBOutlet var RBFirstNameTextField: UITextField!
+    @IBOutlet var RBPasswordTextField: UITextField!
+    @IBOutlet var RBLoginButton: UIButton!
+    @IBOutlet var RBFirstNameLabel: UILabel!
+    @IBOutlet var RBLastNameLabel: UILabel!
+    @IBOutlet var RBLastNameTextField: UITextField!
+    @IBOutlet var RBConfirmPasswordLabel: UILabel!
+    @IBOutlet var RBConfirmPasswordTextField: UITextField!
     @IBOutlet var RBCreateAccountButton: UIButton!
-    @IBOutlet var bottomTest: NSLayoutConstraint!
-    
     // Test outlets
+    @IBOutlet var FirstNameResponseLabel: UILabel!
+    @IBOutlet var LastNameResponseLabel: UILabel!
+    @IBOutlet var EmailResponseLabel: UILabel!
+    @IBOutlet var PasswordResponseLabel: UILabel!
     
-    @IBOutlet var testLabel0: UILabel!
-    @IBOutlet var testLabel1: UILabel!
-    @IBOutlet var testLabel2: UILabel!
-    @IBOutlet var testLabel3: UILabel!
-    @IBOutlet var testLabel4: UILabel!
-    @IBOutlet var testLabel5: UILabel!
+    // Constrains Outlets
+    @IBOutlet var SegmentedControlConstrainTopSpacing: NSLayoutConstraint!
+    @IBOutlet var PasswordTextFieldConstrainCenterX: NSLayoutConstraint!
+    @IBOutlet var PasswordTextFieldConstrainWide: NSLayoutConstraint!
+    @IBOutlet var LoginButtonConstrainCenterX: NSLayoutConstraint!
+    @IBOutlet var LoginButtonConstrainBottomSpacing: NSLayoutConstraint!
+    @IBOutlet var LastNameTextFieldConstrainCenterX: NSLayoutConstraint!
+    @IBOutlet var LastNameTextFieldConstrainWide: NSLayoutConstraint!
+    @IBOutlet var ConfirmPasswordTextFieldConstrainCenterX: NSLayoutConstraint!
+    @IBOutlet var ConfirmPasswordTextFieldConstrainWide: NSLayoutConstraint!
+    @IBOutlet var CreateAccountButtonConstrainCenterX: NSLayoutConstraint!
+    @IBOutlet var CreateAccountButtonConstrainBottomSpacing: NSLayoutConstraint!
+    
+    
+    
 
-    
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    
-     // RBAccount View Controller Native Methods Area
-    // All Native Methods must be implemented here....
+ // RBAccount View Controller Native Methods Area
+// All Native Methods must be implemented here....
     override func viewDidLoad() {
     
         super.viewDidLoad()
@@ -72,7 +93,7 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
             name: UIKeyboardWillHideNotification,
             object: nil)
         
-        // @end ------------------------------------------------------------------------------------------^
+        // @end @gchriswill's Comment ------------------------------------------------------------------------------------------^
         
         var RBLoginImageViewsColors = [UIColor.orangeColor(), UIColor.yellowColor(), UIColor.redColor(), UIColor.purpleColor(), UIColor.blueColor(), UIColor.greenColor() ]
         
@@ -102,11 +123,11 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
                 RBLoginImageViews[i].backgroundColor = RBLoginImageViewsColors[i]
                 RBLoginImageViews[i].image = UIImage(named: "RBUserProfile")
                 
-            }
+            }// @end of If Condition
             
             self.view.addSubview(RBLoginImageViews[i])
             
-        }
+        }// @end of For Loop
         
         self.view.bringSubviewToFront(RBLoginImageViews[0])
         
@@ -114,223 +135,172 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
 
     }// @end of ViewDidLoad
     
-    
-    
-    
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
     
         coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
             
             self.centerist()
+            self.view.updateConstraints()
+            self.view.layoutIfNeeded()
             
-        }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+            }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
             
             
-        })
+            })
         
-    }
-    
-    
-    
+    }// @end of viewWillTransitionToSize
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         
         self.view.endEditing(true)
         
-    }
-    
-    
-    
-    
-    func loginAnimation () -> (Void) {
-        
-        UIView.animateWithDuration(
-            0.5,
-            delay: 0,
-            usingSpringWithDamping: 1,
-            initialSpringVelocity: 10,
-            options: UIViewAnimationOptions.BeginFromCurrentState,
-            animations: { () -> Void in
-                
-                self.valuesForLoginAnimation1()
-                
-            }, completion: { (Bool) -> Void in
-                
-                UIView.animateWithDuration(
-                    0.5,
-                    delay: 0,
-                    usingSpringWithDamping: 0.3,
-                    initialSpringVelocity: 10,
-                    options: UIViewAnimationOptions.BeginFromCurrentState,
-                    animations: { () -> Void in
-                        
-                        self.valuesForLoginAnimation2()
-                        
-                    }, completion: { (Bool) -> Void in
-                        
-                        
-                        
-                    })
-                
-            })
-        
-    }
-    
-    
-    
-    func valuesForLoginAnimation1 () -> (Void) {
-        
-        self.RBLoginImageViews[0].center = self.view.center
-        
-        self.RBLoginImageViews[3].center = CGPointMake(self.view.center.x, self.view.center.y - 50)
-        self.RBLoginImageViews[1].center = CGPointMake(self.view.center.x - 100, self.view.center.y - 125)
-        self.RBLoginImageViews[5].center = CGPointMake(self.view.center.x + 100, self.view.center.y - 50)
-        self.RBLoginImageViews[2].center = CGPointMake(self.view.center.x - 75, self.view.center.y + 75)
-        self.RBLoginImageViews[4].center = CGPointMake(self.view.center.x + 75, self.view.center.y + 75)
-        
-    }
-    
-    
-    
-    func valuesForLoginAnimation2 () -> (Void) {
-        
-        self.RBLoginImageViews[0].center = self.view.center
-        
-        self.RBLoginImageViews[1].center = CGPointMake(self.view.center.x, self.view.center.y - 250)
-        self.RBLoginImageViews[2].center = CGPointMake(self.view.center.x - 200, self.view.center.y - 100)
-        self.RBLoginImageViews[3].center = CGPointMake(self.view.center.x + 200, self.view.center.y - 100)
-        self.RBLoginImageViews[4].center = CGPointMake(self.view.center.x - 150, self.view.center.y + 150)
-        self.RBLoginImageViews[5].center = CGPointMake(self.view.center.x + 150, self.view.center.y + 150)
-        
-    }
-    
-    
-    
-    func centerist () -> (Void) {
-        
-        for (var i = 0; i < 6; i++){
-            
-            RBLoginImageViews[i].center = self.view.center
-            
-        }
-        
-    }
-    
-    
-    
-    func KeyboardUp (toSubstrack: CGFloat) -> (Void) {
-        
-        for (var i = 0; i < 6; i++){
-            
-            RBLoginImageViews[i].center = CGPointMake(self.view.center.x, self.view.center.y - toSubstrack)
-            
-        }
-        
-    }
-    
-    
-    
-    func watchShowKeyboard( notification: NSNotification ) {
-        
-        if !KBCheck {
-        
-            let NInfo: NSDictionary = notification.userInfo!
-            NInfo.objectForKey(UIKeyboardFrameBeginUserInfoKey)!.getValue(&keyboardFrame)
-            
-            KeyboardUp(keyboardFrame.size.height)
-            
-            self.bottomTest.constant = 20 + self.keyboardFrame.size.height
-            self.view.layoutIfNeeded()
-            self.KBCheck = true
-            
-        }
-            
-    }
-    
-    
-    
-    func watchHideKeyboard( notification: NSNotification ) {
-        
-        if KBCheck {
-            
-            let NInfo: NSDictionary = notification.userInfo!
-            NInfo.objectForKey(UIKeyboardFrameBeginUserInfoKey)!.getValue(&keyboardFrame)
-            
-            KeyboardUp(0)
-            
-            self.bottomTest.constant = 20
-            self.view.layoutIfNeeded()
-            self.view.endEditing(true)
-            self.KBCheck = false
-            
-        }
-        
-    }
-    
-    
-    
-    func makeHTTPCallToServer (path: String) -> (Void) {
-        
-            NSURLConnection.sendAsynchronousRequest(
-                NSURLRequest(
-                    URL: NSURL(
-                        string: "\(path)") ),
-                queue: NSOperationQueue.mainQueue(),
-                completionHandler: {
-                    response,
-                    data,
-                    error in
-                    
-                    if let jsonDict: NSArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil ) as? NSArray {
-                        
-                        self.testLabel0.text = jsonDict[0].objectForKey("pfname") as? String
-                        self.testLabel1.text = jsonDict[0].objectForKey("plname") as? String
-                        self.testLabel2.text = jsonDict[0].objectForKey("pemail") as? String
-                        self.testLabel3.text = jsonDict[0].objectForKey("ppasswd") as? String
-                        self.testLabel4.text = jsonDict[0].objectForKey("cgender") as? String
-                        
-                        self.testLabel5.text = jsonDict[0].objectForKey("cage" )!.description as String
-                        
-                    }else{
-                        
-                        var datastring: String = NSString(data:data, encoding:NSUTF8StringEncoding)
-                        
-                        self.testLabel0.text = datastring
-                        
-                        println(datastring)
-                        
-                    }
-                    
-                    
-                    //println()
-                    
-            })
-            
-    }
-    
-    
+    }// @end of touchesBegan
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
+        
+    }// @end of didReceiveMemoryWarning
+    
+// @end of Native Methods area -----------------------------------------------------------------^
+
     
     
-     // Actions Area
-    // All actions must be implemented here....
     
+ // Actions Area
+// All actions must be implemented here....
+    
+    // Needs Comment Description
+    @IBAction func SegmentedAccountOptionsAction(sender: UISegmentedControl) {
+        
+        if self.SegmentedAccountOptionsControl.selectedSegmentIndex == 1 {
+            
+            self.SegmentedAccountOptionsControl.setEnabled(false, forSegmentAtIndex: 0)
+            
+            UIView.animateWithDuration(
+                1,
+                delay: 0,
+                usingSpringWithDamping: 0.9,
+                initialSpringVelocity: 10,
+                options: UIViewAnimationOptions.AllowAnimatedContent,
+                animations: { () -> Void in
+                    
+                    self.RBLoginButton.alpha = 0
+                    self.LoginButtonConstrainCenterX.constant = 570
+                    
+                    self.RBCreateAccountButton.alpha = 1
+                    self.CreateAccountButtonConstrainCenterX.constant = 0
+                    
+                    self.view.updateConstraints()
+                    self.view.layoutIfNeeded()
+                    
+                }, completion: { (Bool) -> Void in
+                    
+                    UIView.animateWithDuration(
+                        0.5,
+                        delay: 0,
+                        usingSpringWithDamping: 0.9,
+                        initialSpringVelocity: 10,
+                        options: UIViewAnimationOptions.BeginFromCurrentState,
+                        animations: { () -> Void in
+                            
+                            self.PasswordTextFieldConstrainWide.constant = 300
+                            
+                            self.RBConfirmPasswordLabel.alpha = 1
+                            self.RBConfirmPasswordTextField.alpha = 1
+                            self.ConfirmPasswordTextFieldConstrainWide.constant = 300
+                            
+                            self.PasswordTextFieldConstrainCenterX.constant = 184
+                            self.ConfirmPasswordTextFieldConstrainCenterX.constant = 184
+                            
+                            self.view.updateConstraints()
+                            self.view.layoutIfNeeded()
+                            
+                        }, completion: { (Bool) -> Void in
+                            
+                            UIView.animateWithDuration(
+                                0.5,
+                                delay: 0,
+                                usingSpringWithDamping: 0.9,
+                                initialSpringVelocity: 10,
+                                options: UIViewAnimationOptions.BeginFromCurrentState,
+                                animations: { () -> Void in
+                                    
+                                    // This on is to break my one animation record 3 in a animation chain
+                                    self.RBFirstNameLabel.alpha = 1
+                                    self.RBFirstNameTextField.alpha = 1
+                                    self.RBLastNameLabel.alpha = 1
+                                    self.RBLastNameTextField.alpha = 1
+                                    
+                                    self.LastNameTextFieldConstrainWide.constant = 300
+                                    self.LastNameTextFieldConstrainCenterX.constant = -184
+                                    
+                                    self.view.updateConstraints()
+                                    self.view.layoutIfNeeded()
+                                    
+                                }, completion: { (Bool) -> Void in
+                                    
+                                    self.SegmentedAccountOptionsControl.setEnabled(true, forSegmentAtIndex: 0)
+                                    println("Sliding Form animation was executed")
+                                    
+                                })
+                            
+                        })
+                    
+                })
+            
+        }else{
+            
+            self.SegmentedAccountOptionsControl.setEnabled(false, forSegmentAtIndex: 1)
+            
+            UIView.animateWithDuration(
+                1,
+                delay: 0,
+                usingSpringWithDamping: 1,
+                initialSpringVelocity: 10,
+                options: UIViewAnimationOptions.BeginFromCurrentState,
+                animations: { () -> Void in
+                    
+                    self.RBLoginButton.alpha = 1
+                    self.LoginButtonConstrainCenterX.constant = 0
+                    
+                    self.RBCreateAccountButton.alpha = 0
+                    self.CreateAccountButtonConstrainCenterX.constant = -570
+                    
+                    self.PasswordTextFieldConstrainWide.constant = 360
+                    self.PasswordTextFieldConstrainCenterX.constant = 0
+                    
+                    self.RBConfirmPasswordLabel.alpha = 0
+                    self.RBConfirmPasswordTextField.alpha = 0
+                    self.ConfirmPasswordTextFieldConstrainWide.constant = 360
+                    self.ConfirmPasswordTextFieldConstrainCenterX.constant = -570
+                    
+                    self.RBFirstNameLabel.alpha = 0
+                    self.RBFirstNameTextField.alpha = 0
+                    self.RBLastNameLabel.alpha = 0
+                    self.RBLastNameTextField.alpha = 0
+                    self.LastNameTextFieldConstrainWide.constant = 360
+                    self.LastNameTextFieldConstrainCenterX.constant = -570
+                    
+                    self.view.updateConstraints()
+                    self.view.layoutIfNeeded()
+                    
+                    
+                }, completion: { (Bool) -> Void in
+            
+                    self.SegmentedAccountOptionsControl.setEnabled(true, forSegmentAtIndex: 1)
+                
+                })
+            
+        }// @end of If Condition
+        
+    }// @end of SegmentedAccountOptionsAction IBAction
+    
+    // Needs Comment Description
     @IBAction func loginButtonAction(sender: AnyObject) {
         
-        var pemail : String = emailTextField.text
-        var ppasswd : String = passwordTextField.text
-        
-        makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/accountlogin/?pemail=\(pemail)&ppasswd=\(ppasswd)")
-        
-        //makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/createaccount/?pfname=Wilma23&plname=Melendez23&pemail=wilmita23@me.com&ppasswd=0000023&cgender=Woman23&cage=56")
-        
-        
-        
-        self.view.endEditing(true)
+        makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/accountlogin/?pemail=\(RBEmailTextField.text as String!)&ppasswd=\(RBPasswordTextField.text as String!)")
         
         UIView.animateWithDuration(
             0.25,
@@ -340,7 +310,10 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
             options: UIViewAnimationOptions.BeginFromCurrentState,
             animations: { () -> Void in
                 
-                self.bottomTest.constant = -300
+                self.LoginButtonConstrainBottomSpacing.constant = -300
+                self.SegmentedControlConstrainTopSpacing.constant = -55
+                self.CreateAccountButtonConstrainBottomSpacing.constant = -125
+                self.view.updateConstraints()
                 self.view.layoutIfNeeded()
                 
             }, completion: { (Bool) -> Void in
@@ -351,7 +324,47 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
                 
             })
         
-    }
+    }// @end of loginButtonAction IBAction
     
-}
+    // Needs Comment Description
+    @IBAction func createAccountButtonAction(sender: AnyObject) {
+        
+        makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/createaccount/?pfname=\(RBFirstNameTextField.text as String!)&plname=\(RBLastNameTextField.text as String!)&pemail=\(RBEmailTextField.text as String!)&ppasswd=\(RBPasswordTextField.text as String!)")
+        
+        self.view.endEditing(true)
+        
+        UIView.animateWithDuration(
+            0.25,
+            delay: 0,
+            usingSpringWithDamping: 0.5,
+            initialSpringVelocity: 10,
+            options: UIViewAnimationOptions.BeginFromCurrentState,
+            animations: { () -> Void in
+                
+               
+                self.SegmentedControlConstrainTopSpacing.constant = -55
+                self.LoginButtonConstrainBottomSpacing.constant = -300
+                self.CreateAccountButtonConstrainBottomSpacing.constant = -125
+                
+                self.view.updateConstraints()
+                self.view.layoutIfNeeded()
+                
+            }, completion: { (Bool) -> Void in
+                
+                
+                self.loginAnimation()
+                
+            })
+        
+    }// @end of createAccountButtonAction IBAction
 
+
+
+
+
+// @end of IBAction Methods Area ----------------------------------------------------------------^
+} // @end of RBAccountViewController Class
+
+
+        
+        
