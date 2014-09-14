@@ -20,10 +20,20 @@ class TestingViewController: UIViewController, UITextFieldDelegate {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
+        
+        
         
         //testingLabel.text = "Changed. Son."
         
         
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.view.superview?.layer.cornerRadius = 50
+        self.view.superview?.layer.masksToBounds = true
     }
     
     

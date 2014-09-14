@@ -322,11 +322,11 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
         
         self.view.endEditing(true)
         
-        dispatch_async(dispatch_get_global_queue(0, 0), { () -> Void in
+    /*    dispatch_async(dispatch_get_global_queue(0, 0), { () -> Void in
             
             self.makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/createaccount/?pfname=\(self.RBFirstNameTextField.text as String!)&plname=\(self.RBLastNameTextField.text as String!)&pemail=\(self.RBEmailTextField.text as String!)&ppasswd=\(self.RBPasswordTextField.text as String!)")
         
-        })
+        }) */
         
         UIView.animateWithDuration(
             0.25,
@@ -347,7 +347,9 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
                 
             }, completion: { (Bool) -> Void in
                 
-                self.loginAnimation()
+                self.performSegueWithIdentifier("PresentControllerSegue", sender: nil)
+
+               // self.loginAnimation()
                 
             })
         
