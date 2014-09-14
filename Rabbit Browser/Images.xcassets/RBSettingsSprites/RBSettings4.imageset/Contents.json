@@ -1,13 +1,13 @@
 {
   "images" : [
     {
-      "idiom" : "ipad",
+      "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
+      "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "RBArbyImage.png"
+      "filename" : "RunningSettings4_Frame 4.png"
     }
   ],
   "info" : {
