@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80BF9E0419C532D4002BEBE9 /* TestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BF9E0319C532D4002BEBE9 /* TestingViewController.swift */; };
 		D93DE38719BD8E2D0074F902 /* RBAccountHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93DE38619BD8E2D0074F902 /* RBAccountHelper.swift */; };
 		D9788FD319BAA6EE00336D67 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9788FD219BAA6EE00336D67 /* Images.xcassets */; };
 		D997E86519C4F5A200752C22 /* RBSpecialNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = D997E86419C4F5A200752C22 /* RBSpecialNav.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		80BF9E0319C532D4002BEBE9 /* TestingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
 		D93DE38619BD8E2D0074F902 /* RBAccountHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBAccountHelper.swift; sourceTree = "<group>"; };
 		D9788FD219BAA6EE00336D67 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D997E86419C4F5A200752C22 /* RBSpecialNav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBSpecialNav.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				D9FCFE5519BA72D700E98C5D /* Main.storyboard */,
 				D9788FD219BAA6EE00336D67 /* Images.xcassets */,
 				D9FCFE4F19BA72D700E98C5D /* Supporting Files */,
+				80BF9E0319C532D4002BEBE9 /* TestingViewController.swift */,
 			);
 			path = "Rabbit Browser";
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				D9FCFE5419BA72D700E98C5D /* RBAccountViewController.swift in Sources */,
 				D9FCFE5219BA72D700E98C5D /* AppDelegate.swift in Sources */,
 				D997E86519C4F5A200752C22 /* RBSpecialNav.swift in Sources */,
+				80BF9E0419C532D4002BEBE9 /* TestingViewController.swift in Sources */,
 				D93DE38719BD8E2D0074F902 /* RBAccountHelper.swift in Sources */,
 				D9E1877C19C426F300AD6867 /* RBOptionsViewController.swift in Sources */,
 			);

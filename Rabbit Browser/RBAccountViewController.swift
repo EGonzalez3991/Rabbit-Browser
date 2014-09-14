@@ -23,7 +23,6 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
     var KBCheck2: Bool = false
     
     
-    
     @IBOutlet var testing: [UIButton]!
     
       // Interface Builder Outlets Main Area
@@ -100,7 +99,7 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
             object: nil)
         
         // @end @gchriswill's Comment ------------------------------------------------------------------------------------------^
-        testing[0]
+        //testing[0]
        
         
         //centerist(25)
@@ -311,7 +310,7 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
             }, completion: { (Bool) -> Void in
                 
                 //self.loginAnimation()
-                //self.performSegueWithIdentifier("PresentControllerSegue", sender: nil)
+                self.performSegueWithIdentifier("PresentControllerSegue", sender: nil)
                 
                 
             })
