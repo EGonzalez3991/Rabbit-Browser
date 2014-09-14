@@ -23,7 +23,7 @@ extension RBAccountViewController {
             options: UIViewAnimationOptions.AllowAnimatedContent,
             animations: { () -> Void in
                 
-                self.valuesForLoginAnimation1()
+                //self.valuesForLoginAnimation1()
                 
             }, completion: { (Bool) -> Void in
                 
@@ -35,7 +35,7 @@ extension RBAccountViewController {
                     options: UIViewAnimationOptions.BeginFromCurrentState,
                     animations: { () -> Void in
                         
-                        self.valuesForLoginAnimation2()
+                        //self.valuesForLoginAnimation2()
                         
                     }, completion: { (Bool) -> Void in
                         
@@ -48,37 +48,37 @@ extension RBAccountViewController {
     }// @end of loginAnimation Function
     
     // Needs Comment Description
-    func valuesForLoginAnimation1 () -> (Void) {
-        
-        self.RBLoginImageViews[0].center = self.view.center
-        
-        self.RBLoginImageViews[3].center = CGPointMake(self.view.center.x, self.view.center.y - 50)
-        self.RBLoginImageViews[1].center = CGPointMake(self.view.center.x - 100, self.view.center.y - 125)
-        self.RBLoginImageViews[5].center = CGPointMake(self.view.center.x + 100, self.view.center.y - 50)
-        self.RBLoginImageViews[2].center = CGPointMake(self.view.center.x - 75, self.view.center.y + 75)
-        self.RBLoginImageViews[4].center = CGPointMake(self.view.center.x + 75, self.view.center.y + 75)
-        
-    }// @end of valuesForLoginAnimation1 Function
+//    func valuesForLoginAnimation1 () -> (Void) {
+//        
+//        self.RBLoginImageViews[0].center = self.view.center
+//        
+//        self.RBLoginImageViews[3].center = CGPointMake(self.view.center.x, self.view.center.y - 50)
+//        self.RBLoginImageViews[1].center = CGPointMake(self.view.center.x - 100, self.view.center.y - 125)
+//        self.RBLoginImageViews[5].center = CGPointMake(self.view.center.x + 100, self.view.center.y - 50)
+//        self.RBLoginImageViews[2].center = CGPointMake(self.view.center.x - 75, self.view.center.y + 75)
+//        self.RBLoginImageViews[4].center = CGPointMake(self.view.center.x + 75, self.view.center.y + 75)
+//        
+//    }// @end of valuesForLoginAnimation1 Function
     
     // Needs Comment Description
-    func valuesForLoginAnimation2 () -> (Void) {
-        
-        self.RBLoginImageViews[0].center = self.view.center
-        
-        self.RBLoginImageViews[1].center = CGPointMake(self.view.center.x, self.view.center.y - 250)
-        self.RBLoginImageViews[2].center = CGPointMake(self.view.center.x - 200, self.view.center.y - 100)
-        self.RBLoginImageViews[3].center = CGPointMake(self.view.center.x + 200, self.view.center.y - 100)
-        self.RBLoginImageViews[4].center = CGPointMake(self.view.center.x - 150, self.view.center.y + 150)
-        self.RBLoginImageViews[5].center = CGPointMake(self.view.center.x + 150, self.view.center.y + 150)
-        
-    }// @end of valuesForLoginAnimation2 Function
+//    func valuesForLoginAnimation2 () -> (Void) {
+//        
+//        self.RBLoginImageViews[0].center = self.view.center
+//        
+//        self.RBLoginImageViews[1].center = CGPointMake(self.view.center.x, self.view.center.y - 250)
+//        self.RBLoginImageViews[2].center = CGPointMake(self.view.center.x - 200, self.view.center.y - 100)
+//        self.RBLoginImageViews[3].center = CGPointMake(self.view.center.x + 200, self.view.center.y - 100)
+//        self.RBLoginImageViews[4].center = CGPointMake(self.view.center.x - 150, self.view.center.y + 150)
+//        self.RBLoginImageViews[5].center = CGPointMake(self.view.center.x + 150, self.view.center.y + 150)
+//        
+//    }// @end of valuesForLoginAnimation2 Function
     
     // Needs Comment Description
     func centerist (toSubstract: CGFloat) -> (Void) {
         
         for (var i = 0; i < 6; i++){
             
-            RBLoginImageViews[i].center = CGPointMake(self.view.center.x, self.view.center.y - toSubstract)
+           // RBLoginImageViews[i].center = CGPointMake(self.view.center.x, self.view.center.y - toSubstract)
             
         }
         
@@ -89,7 +89,7 @@ extension RBAccountViewController {
         
         for (var i = 0; i < 6; i++){
             
-            RBLoginImageViews[i].center = CGPointMake(self.view.center.x, self.view.center.y - toSubstrack)
+            //RBLoginImageViews[i].center = CGPointMake(self.view.center.x, self.view.center.y - toSubstrack)
             
         }
         

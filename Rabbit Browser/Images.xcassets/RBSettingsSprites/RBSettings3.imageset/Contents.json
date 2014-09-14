@@ -1,13 +1,13 @@
 {
   "images" : [
     {
-      "idiom" : "ipad",
+      "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
+      "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "RBUserSettings.png"
+      "filename" : "RunningSettings3_Frame3.png"
     }
   ],
   "info" : {

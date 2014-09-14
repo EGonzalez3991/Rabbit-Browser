@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D93DE38719BD8E2D0074F902 /* RBAccountHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93DE38619BD8E2D0074F902 /* RBAccountHelper.swift */; };
 		D9788FD319BAA6EE00336D67 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9788FD219BAA6EE00336D67 /* Images.xcassets */; };
+		D997E86519C4F5A200752C22 /* RBSpecialNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = D997E86419C4F5A200752C22 /* RBSpecialNav.swift */; };
+		D9E1877C19C426F300AD6867 /* RBOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1877B19C426F300AD6867 /* RBOptionsViewController.swift */; };
 		D9FCFE5219BA72D700E98C5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FCFE5119BA72D700E98C5D /* AppDelegate.swift */; };
 		D9FCFE5419BA72D700E98C5D /* RBAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FCFE5319BA72D700E98C5D /* RBAccountViewController.swift */; };
 		D9FCFE5719BA72D700E98C5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9FCFE5519BA72D700E98C5D /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 /* Begin PBXFileReference section */
 		D93DE38619BD8E2D0074F902 /* RBAccountHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBAccountHelper.swift; sourceTree = "<group>"; };
 		D9788FD219BAA6EE00336D67 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D997E86419C4F5A200752C22 /* RBSpecialNav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBSpecialNav.swift; sourceTree = "<group>"; };
+		D9E1877B19C426F300AD6867 /* RBOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBOptionsViewController.swift; sourceTree = "<group>"; };
 		D9FCFE4C19BA72D700E98C5D /* Rabbit Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rabbit Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9FCFE5019BA72D700E98C5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9FCFE5119BA72D700E98C5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 			children = (
 				D9FCFE5119BA72D700E98C5D /* AppDelegate.swift */,
 				D9FCFE5319BA72D700E98C5D /* RBAccountViewController.swift */,
+				D9E1877B19C426F300AD6867 /* RBOptionsViewController.swift */,
+				D997E86419C4F5A200752C22 /* RBSpecialNav.swift */,
 				D93DE38619BD8E2D0074F902 /* RBAccountHelper.swift */,
 				D9FCFE5519BA72D700E98C5D /* Main.storyboard */,
 				D9788FD219BAA6EE00336D67 /* Images.xcassets */,
@@ -161,6 +167,7 @@
 				TargetAttributes = {
 					D9FCFE4B19BA72D700E98C5D = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = A3RWZMX5HE;
 					};
 					D9FCFE5D19BA72D700E98C5D = {
 						CreatedOnToolsVersion = 6.0;
@@ -213,7 +220,9 @@
 			files = (
 				D9FCFE5419BA72D700E98C5D /* RBAccountViewController.swift in Sources */,
 				D9FCFE5219BA72D700E98C5D /* AppDelegate.swift in Sources */,
+				D997E86519C4F5A200752C22 /* RBSpecialNav.swift in Sources */,
 				D93DE38719BD8E2D0074F902 /* RBAccountHelper.swift in Sources */,
+				D9E1877C19C426F300AD6867 /* RBOptionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +340,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Rabbit Browser/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -342,6 +352,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Rabbit Browser/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

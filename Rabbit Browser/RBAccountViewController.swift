@@ -12,20 +12,19 @@ import UIKit
 
 class RBAccountViewController: UIViewController, UITextFieldDelegate {
     
-    // Test Pull Request 1
-    
-    
+   
     
     
      // Custom Variable Area
     // All custom variable must be implemented here....
-    var RBLoginImageViews: [UIImageView] = Array()
+    
     var keyboardFrame: CGRect!
     var KBCheck: Bool = false
     var KBCheck2: Bool = false
     
     
     
+    @IBOutlet var testing: [UIButton]!
     
       // Interface Builder Outlets Main Area
      // All Outlets must be implemented here....
@@ -49,6 +48,8 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var LastNameResponseLabel: UILabel!
     @IBOutlet var EmailResponseLabel: UILabel!
     @IBOutlet var PasswordResponseLabel: UILabel!
+    @IBOutlet var TestButton: UIButton!
+    
     
     // Constrains Outlets
     @IBOutlet var SegmentedControlConstrainTopSpacing: NSLayoutConstraint!
@@ -99,44 +100,10 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
             object: nil)
         
         // @end @gchriswill's Comment ------------------------------------------------------------------------------------------^
+        testing[0]
+       
         
-        var RBLoginImageViewsColors = [UIColor.orangeColor(), UIColor.yellowColor(), UIColor.redColor(), UIColor.purpleColor(), UIColor.blueColor(), UIColor.greenColor() ]
-        
-        for (var i = 0; i < RBLoginImageViewsColors.count; i++ ) {
-            
-            RBLoginImageViews.append( UIImageView() )
-            
-            if i == 0 {
-                
-                RBLoginImageViews[i].frame = CGRectMake(0, 0, 200, 200)
-                RBLoginImageViews[i].layer.cornerRadius = 100
-                RBLoginImageViews[i].backgroundColor = RBLoginImageViewsColors[i]
-                RBLoginImageViews[i].image = UIImage(named: "RBArbyIcon")
-                
-                
-            } else if i == 1 {
-            
-                RBLoginImageViews[i].frame = CGRectMake(0, 0, 150, 150)
-                RBLoginImageViews[i].layer.cornerRadius = 75
-                RBLoginImageViews[i].backgroundColor = RBLoginImageViewsColors[i]
-                RBLoginImageViews[i].image = UIImage(named: "RBUserSettings")
-                
-            }else{
-                
-                RBLoginImageViews[i].frame = CGRectMake(0, 0, 100, 100)
-                RBLoginImageViews[i].layer.cornerRadius = 50
-                RBLoginImageViews[i].backgroundColor = RBLoginImageViewsColors[i]
-                RBLoginImageViews[i].image = UIImage(named: "RBUserProfile")
-                
-            }// @end of If Condition
-            
-            self.view.addSubview(RBLoginImageViews[i])
-            
-        }// @end of For Loop
-        
-        self.view.bringSubviewToFront(RBLoginImageViews[0])
-        
-        centerist(25)
+        //centerist(25)
 
     }// @end of ViewDidLoad
     
@@ -144,7 +111,7 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
     
         coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
             
-            self.centerist(25)
+            //self.centerist(25)
             self.view.updateConstraints()
             self.view.layoutIfNeeded()
             
@@ -162,6 +129,12 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
         
     }// @end of touchesBegan
     
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if let pvc: UIPresentationController! = segue.sourceViewController.presentationController {
+//            pvc.containerView.layer.cornerRadius = 50
+//        }
+//    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -171,7 +144,7 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
 // @end of Native Methods area -----------------------------------------------------------------^
 
     
-    
+
     
  // Actions Area
 // All actions must be implemented here....
@@ -306,11 +279,18 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
         
         self.view.endEditing(true)
         
-        dispatch_async(dispatch_get_global_queue(0, 0), { () -> Void in
-            
-            self.makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/accountlogin/?pemail=\(self.RBEmailTextField.text as String!)&ppasswd=\(self.RBPasswordTextField.text as String!)")
-            
-        })
+//        dispatch_async(dispatch_get_global_queue(0, 0), { () -> Void in
+//            
+//            self.makeHTTPCallToServer("http://gcwtestapp.herokuapp.com/accountlogin/?pemail=\(self.RBEmailTextField.text as String!)&ppasswd=\(self.RBPasswordTextField.text as String!)")
+//            
+//        })
+        
+        TestButton.imageView!.animationImages = [UIImage(named: "RBSettings1"), UIImage(named: "RBSettings2"), UIImage(named: "RBSettings3"), UIImage(named: "RBSettings4") ]
+        
+        TestButton.imageView!.animationDuration = 0.3
+        //testImageView.animationRepeatCount = 15
+        TestButton.imageView!.startAnimating()
+        
         
         UIView.animateWithDuration(
             0.25,
@@ -330,7 +310,9 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
                 
             }, completion: { (Bool) -> Void in
                 
-                self.loginAnimation()
+                //self.loginAnimation()
+                //self.performSegueWithIdentifier("PresentControllerSegue", sender: nil)
+                
                 
             })
         
