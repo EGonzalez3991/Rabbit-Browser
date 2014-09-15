@@ -1,13 +1,12 @@
 {
   "images" : [
     {
-      "idiom" : "ipad",
+      "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
-      "scale" : "2x",
-      "filename" : "RBUserProfileIconLogo.png"
+      "idiom" : "universal",
+      "scale" : "2x"
     }
   ],
   "info" : {
