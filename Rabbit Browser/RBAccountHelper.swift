@@ -12,7 +12,7 @@ import UIKit
  // All custom functions must be implemented here
 // This file extention is for transfering all the code that is not native from the RBAccountViewController Class...
 extension RBAccountViewController {
-    
+    //adadasda
     func loginAnimation () -> (Void) {
         
         UIView.animateWithDuration(
