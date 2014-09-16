@@ -275,6 +275,7 @@ class RBAccountViewController: UIViewController, UITextFieldDelegate {
     }// @end of createAccountButtonAction IBAction
     
     @IBAction func settingsButtonAction(sender: AnyObject) {
+    
         
         self.RBNavButtonsCollection[0].imageView!.startAnimating()
         self.performSegueWithIdentifier("PresentationSegueToDashboard", sender: nil)

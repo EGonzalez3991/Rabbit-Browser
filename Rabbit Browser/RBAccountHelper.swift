@@ -252,7 +252,6 @@ extension RBAccountViewController {
                             }, completion: { (Bool) -> Void in
                                 
                                 self.SegmentedAccountOptionsControl.setEnabled(true, forSegmentAtIndex: 0)
-                                println("Sliding Form animation was executed")
                                 
                             })
                         
