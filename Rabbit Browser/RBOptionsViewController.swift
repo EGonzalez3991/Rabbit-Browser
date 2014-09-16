@@ -12,20 +12,31 @@ class RBOptionsViewController: UIViewController {
     
     
     
+    // UI Outlets
+    @IBOutlet weak var testingLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.view.layer.cornerRadius = 50
+        testingLabel.text = "Changed. Son."
         
-    }
+        
+    }// @end of ViewDidLoad
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.view.superview?.layer.cornerRadius = 50
+        self.view.superview?.layer.masksToBounds = true
+        
+    }// @end of viewWillLayoutSubviews
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         
     }// @end of didReceiveMemoryWarning
-
     
     
 }

@@ -643,10 +643,10 @@
             </objects>
             <point key="canvasLocation" x="114.75" y="102"/>
         </scene>
-        <!--Testing View Controller-->
+        <!--Options View Controller-->
         <scene sceneID="vqp-cn-BMv">
             <objects>
-                <viewController definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" modalTransitionStyle="crossDissolve" modalPresentationStyle="formSheet" id="dkB-u3-hZR" customClass="TestingViewController" customModule="Rabbit_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" modalTransitionStyle="crossDissolve" modalPresentationStyle="formSheet" id="dkB-u3-hZR" customClass="RBOptionsViewController" customModule="Rabbit_Browser" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TuP-Fd-eLi"/>
                         <viewControllerLayoutGuide type="bottom" id="ebw-Az-ay6"/>
