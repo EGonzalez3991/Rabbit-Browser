@@ -30,8 +30,8 @@ class RBDashboardViewController: UIViewController, UITextFieldDelegate {
         // This crops the master views corners and masks it to bounds
         // We want to access the master view when cropping so avoid the "gray corner bug"
         
-//        self.view.superview?.layer.cornerRadius = 50
-//        self.view.superview?.layer.masksToBounds = true
+        self.view.superview?.layer.cornerRadius = 50
+       self.view.superview?.layer.masksToBounds = true
         
     }// @end of viewWillLayoutSubviews
     
